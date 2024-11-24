@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Fale Conosco</title>
+    <link rel="icon" type="image/png" href="./assets/Logo site.png">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+          <a href="./index.html" class="logo">
+            <img src="./assets/Oceanarte_(1580_x_1080_px).png" alt="Logo">
+          </a>
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+          <nav class="nav-links" id="navLinks">
+            <a href="index.html">Sobre</a>
+            <a href="quem_somos.html">Quem somos</a>
+            <a href="parceriais.html">Instalações</a>
+            <a href="contato.html">Fale Conosco</a>
+          </nav>
+        </div>
+      </header>
+
+
+      <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+        apiKey: "AIzaSyD-Gh1a8XUgZhIgkgSSFNV1UWoRS37sojg",
+        authDomain: "oceanarte-789db.firebaseapp.com",
+        projectId: "oceanarte-789db",
+        storageBucket: "oceanarte-789db.firebasestorage.app",
+        messagingSenderId: "773544529553",
+        appId: "1:773544529553:web:1eea02e3e232f07fddb930",
+        measurementId: "G-0K9TD6741R"
+    };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        document.getElementById('userForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const idade = document.getElementById('idade').value;
+        const telefone = document.getElementById('telefone').value;
+        const cidade = document.getElementById('cidade').value;
+        const bairro = document.getElementById('bairro').value;
+
+        try {
+            await addDoc(collection(db, "Voluntários"), {
+                nome: nome,
+                email: email,
+                idade: idade,
+                telefone: telefone,
+                cidade: cidade,
+                bairro: bairro,
+            });
+
+            alert("Dados enviados com sucesso!");
+
+            document.getElementById('userForm').reset();
+        } catch (error) {
+            console.error ("Erro ao adicionar documento: ", error);
+            alert ("Ocorreu um erro ao enviar os dados. Tente Novamente.");
+        }
+        });
+
+        document.getElementById("userForm").addEventListener("submit", function (event) {
+        const termsCheckbox = document.getElementById("terms");
+        const ageConsentCheckbox = document.getElementById("ageConsent");
+    
+        if (!termsCheckbox.checked || !ageConsentCheckbox.checked) {
+        event.preventDefault(); // Impede o envio do formulário
+        alert("Você deve marcar todas as opções para continuar.");
+        }
+        });
+
+      </script>
+
+        <main class="main-contant">
+        
+            <h1 class="integrantes_quemsomos">Quer fazer parte dessa iniciativa?</h1>
+            <p class="contato_p">Preencha seus dados e junte-se a nós para proteger nossas praias e cuidar do meio ambiente. Sua participação é essencial para fazermos a diferença juntos!</p>
+
+            <div class="formulario">
+                <form id="userForm">
+                    <h1 class="title_contato">Prencha seus dados</h1>
+                    <label>Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome" required>
+    
+                    <label>Email:</label>
+                    <input type="email" id="email" name="email" placeholder="E-mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Digite um email válido, como exemplo@dominio.com">
+
+                    <label>Idade:</label>
+                    <input type="number" id="idade" name="idade" placeholder="Idade" required min="16">                    
+    
+                    <label>Telefone:</label>
+                    <input type="text" id="telefone" name="telefone" placeholder="Telefone" required pattern="\(\d{2}\) \d{5}-\d{4}" title="Digite no formato (XX) XXXXX-XXXX">
+
+                    <label>Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
+
+                    <label>Bairro:</label>
+                    <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
+                    
+                    <label>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    Concordo com os <a href="#" target="_blank" style="color: #eeac56;">termos de uso</a> e <a href="#" target="_blank" style="color: #eeac56;">política de privacidade</a>.
+                    </label>
+
+                    <label>
+                    <input type="checkbox" id="ageConsent" name="ageConsent" required>
+                    Declaro que sou maior de 16 anos e estou ciente das condições para participar.
+                    </label>
+
+                    <div class="space_button">
+                    <button type="submit" class="button_contato">Enviar</button>
+                    </div>
+                </form>
+            </div>
+
+        </main>
+
+        <footer class="footer">
+            <!-- Título Oceanarte alinhado à esquerda dentro do footer -->
+            <div class="footer-title">
+                <h1>Oceanarte</h1>
+            </div>
+        
+            <div class="footer-content">
+                <div class="footer-section">
+                    <ul>
+                        <li><a href="#">Política de Doação</a></li>
+                        <li><a href="#">Relatórios Anuais</a></li>
+                        <li><a href="#">Política de Comunidade</a></li>
+                        <li><a href="#">Trabalhe conosco</a></li>
+                        <li><a href="#">Doe agora</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-section">
+                    <ul>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Direitos Autorais</a></li>
+                        <li><a href="#">Fale conosco</a></li>
+                        <li><a href="#">Arquivo</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-section social-media">
+                    <p>Siga nossas redes sociais</p>
+                    <ul>
+                        <li><a href="#"><img src="https://img.icons8.com/ios_filled/512/FFFFFF/youtube-play.png" alt="YouTube" class="social-icon"></a></li>
+                        <li><a href="https://www.instagram.com/oceanarte_pplvt/"><img src="https://img.icons8.com/m_outlined/200/FFFFFF/instagram-new.png" alt="Instagram" class="social-icon"></a></li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="footer-bottom">
+                <p>&copy; 2024 Oceanarte - Todos os direitos reservados</p>
+            </div>
+        </footer>
+        
