@@ -601,6 +601,9 @@ label input[type="checkbox"] {
     padding: 0 10px;
     color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: static; /* Garante que ele não seja fixo */
+    width: 100%; /* Certifica que ocupa toda a largura */
+    z-index: 1; /* Garante que fique acima do carrossel */
   }
 
   .header-container {
@@ -681,6 +684,14 @@ label input[type="checkbox"] {
       text-align: center;
       padding: 10px 0;
     }
+
+    .footer-title::after {
+      content: ''; 
+      display: block;
+      width: 1250%; 
+      height: 2px; 
+      background-color: #3cbd9d; 
+    }
   
     .footer-section ul {
       list-style-type: none;
@@ -737,7 +748,7 @@ label input[type="checkbox"] {
     .footer-bottom {
       width: 100%;
       text-align: center;
-      padding: 20px;
+      padding: 10px;
       background-color: #366163;
       margin-top: 20px;
     }
@@ -957,5 +968,124 @@ label input[type="checkbox"] {
     height: 100%;
   }
 
+}
+
+@media (max-width: 480px) {
+  body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  header {
+    height: 80px; /* Reduz a altura do cabeçalho */
+    padding: 0 8px;
+    position: static; /* Garante que ele não seja fixo */
+    width: 100%; /* Certifica que ocupa toda a largura */
+    z-index: 1; /* Garante que fique acima do carrossel */
+  }
+
+  .logo img {
+    height: 60px; /* Ajusta a altura da logo */
+  }
+
+  .nav-links a {
+    font-size: 14px; /* Reduz o tamanho da fonte dos links */
+    padding: 8px;
+  }
+
+  .footer {
+    padding: 10px; /* Reduz padding geral */
+  }
+
+  .footer-section ul li a {
+    font-size: 14px; /* Reduz o tamanho da fonte */
+  }
+
+  .carousel {
+    max-height: 300px; /* Reduz a altura do carrossel */
+  }
+
+  .carousel-text {
+    font-size: 16px;
+    top: 10%; /* Ajusta a posição do texto */
+    left: 5%; 
+    padding-right: 10px; 
+  }
+
+  .carousel-text-p {
+    font-size: 12px; /* Reduz a fonte dos textos do carrossel */
+    padding-bottom: 5px;
+  }
+
+  .ambient {
+    font-size: 24px; /* Ajusta tamanho do texto principal */
+  }
+
+  .ambient-sub {
+    font-size: 14px; /* Ajusta o subtítulo */
+  }
+
+  .objeto_index img, .metolodolia_index img {
+    max-width: 100%;
+    height: auto; /* Garante a responsividade das imagens */
+  }
+
+  .objeto_index h1, .metolodolia_index h1,
+  .justificativa_index h1, .conclusao_index h1 {
+    font-size: 18px; /* Ajusta os títulos */
+  }
+
+  .justificativa_index img, .conclusao_index img {
+    padding: 0; /* Remove padding das imagens */
+  }
+
+  .text_quemsomosnos_1,
+  .text_quemsomosnos {
+    font-size: 14px; /* Reduz a fonte do texto */
+    padding: 10px; /* Ajusta o padding */
+  }
+
+  .nome_quemsomos {
+    font-size: 20px; /* Ajusta o nome dos integrantes */
+  }
+
+  .funcao_quemsomos {
+    font-size: 12px; /* Ajusta o tamanho da função */
+  }
+
+  .integrante img {
+    max-width: 100%; /* Ajusta as imagens para dispositivos menores */
+    height: auto;
+  }
+
+  #userForm {
+    max-width: 100%; /* Garante responsividade no formulário */
+    padding: 10px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  textarea {
+    font-size: 12px; /* Ajusta fontes dos inputs */
+    padding: 8px;
+  }
+
+  .button_contato {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .mapa {
+    height: 200px; /* Ajusta a altura do mapa */
+  }
 }
 

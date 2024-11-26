@@ -20,12 +20,12 @@
           <nav class="nav-links" id="navLinks">
             <a href="index.html">Sobre</a>
             <a href="quem_somos.html">Quem somos</a>
-            <a href="parceriais.html">Instalações</a>
+            <a href="parcerias.html">Instalações</a>
             <a href="contato.html">Fale Conosco</a>
           </nav>
         </div>
       </header>
-          
+      
     
 <main class="main-contant">
     <section class="carousel">
@@ -187,6 +187,11 @@ function changeSlide(direction) {
 
     // Adiciona a classe 'active' ao slide atual
     slides[currentIndex].classList.add('active');
+}
+
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks'); // Seleciona o menu de navegação
+  navLinks.classList.toggle('active'); // Alterna a classe 'active' para mostrar/ocultar
 }
 
 // Inicializa o carrossel mostrando o primeiro slide
