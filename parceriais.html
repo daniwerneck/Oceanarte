@@ -32,6 +32,7 @@
         <main class="main-contant">
 
             <h1 class="integrantes_quemsomos">Nossas instalações</h1>
+            <p class="text_instalaçoes"> Descubra agora a localização das nossas instalações! </p>
             <div class="mapa">
             <div id="map"></div>
           
@@ -125,4 +126,58 @@
                 <p>&copy; 2024 Oceanarte - Todos os direitos reservados</p>
             </div>
         </footer>
+        <script>
+            let currentIndex = 0; // Define o índice do slide atual
+            const slides = document.querySelectorAll('.carousel-item'); // Todos os itens (imagens) do carrossel
+            
+            // Função para mudar o slide
+            function changeSlide(direction) {
+                // Remove a classe 'active' de todos os slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+            
+                // Atualiza o índice para o slide anterior ou próximo
+                currentIndex += direction;
+            
+                // Se o índice for menor que 0, vai para o último slide
+                if (currentIndex < 0) {
+                    currentIndex = slides.length - 1;
+                }
+            
+                // Se o índice for maior que o número de slides, vai para o primeiro
+                if (currentIndex >= slides.length) {
+                    currentIndex = 0;
+                }
+            
+                // Adiciona a classe 'active' ao slide atual
+                slides[currentIndex].classList.add('active');
+            }
+            
+            // Função para alternar o menu e ajustar o conteúdo
+            function toggleMenu() {
+                const navLinks = document.getElementById('navLinks');
+                const content = document.querySelector('.main-contant'); // Substitua pelo seletor correto
+            
+                if (!content) {
+                    console.warn('Elemento de conteúdo não encontrado. O menu ainda será exibido.');
+                }
+            
+                navLinks.classList.toggle('active');
+            
+                if (navLinks.classList.contains('active') && content) {
+                    content.style.marginTop = `${navLinks.offsetHeight}px`;
+                } else if (content) {
+                    content.style.marginTop = '0';
+                }
+            }
+            
+            
+            // Inicializa o carrossel mostrando o primeiro slide
+            window.onload = () => {
+                slides[currentIndex].classList.add('active'); // Mostra o primeiro slide ao carregar a página
+            };
+            
+            
+            </script>
         
