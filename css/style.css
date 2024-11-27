@@ -1156,6 +1156,14 @@ label input[type="checkbox"] {
     width: 100%;              /* Garante que o contêiner ocupe toda a largura */
   }
 
+
+  .objetivo_index h2, .metolodolia_index h2, .justificativa_index h2, .conclusao_index h2 {
+    text-shadow: #333;
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-family: "Bebas Neue", sans-serif;
+  }
+
   .objetivo_index h1, .metolodolia_index h1 {
     order: -1;               /* Coloca o texto antes da imagem */
     max-width: 100%;
@@ -1165,23 +1173,7 @@ label input[type="checkbox"] {
     margin-bottom: -10px;
     color: #1dd2db;
     font-family: "Bebas Neue", sans-serif;
-  }
-
-  .objetivo_index h2, .metolodolia_index h2, .justificativa_index h2, .conclusao_index h2 {
-    text-shadow: #333;
-    font-size: 15px;
-    margin-bottom: 20px;
-    font-family: "Bebas Neue", sans-serif;
-  }
-
-   .metolodolia_index .texto_index {
-    order: -1;               /* Coloca o texto antes da imagem */
-    max-width: 100%;
-    padding-right: 20px;
-    margin-left: 10px;
-    margin-right: 12px;
-    font-size: 16px;
-    padding-left: 10px;
+    text-align: left;
   }
 
   .justificativa_index h1, .conclusao_index h1 {
@@ -1193,23 +1185,58 @@ label input[type="checkbox"] {
     margin-bottom: -10px;
     color: #1d76db;
     font-family: "Bebas Neue", sans-serif;
+    text-align: left;
   }
-
 
   .objetivo_index .texto_index {
     order: -1;               /* Coloca o texto antes da imagem */
     max-width: 100%;
     padding-right: 20px;
-    margin-left: 10px;
-    margin-right: 12px;
+    margin-left: 30px;
+    margin-right: 50px;
     font-size: 16px;
     margin-bottom: -10px;
+    text-align: justify;
+  }
+
+  .metolodolia_index .texto_index {
+    order: -1;               /* Coloca o texto antes da imagem */
+    max-width: 100%;
+    padding-right: 20px;
+    margin-left: 25px;
+    margin-right: 50px;
+    font-size: 16px;
+    padding-left: 10px;
+    text-align: justify;
+  }
+
+  .justificativa_index .texto_index, .conclusao_index .texto_index {
+    order: -1;               /* Coloca o texto antes da imagem */
+    max-width: 100%;
+    padding-right: 20px;
+    margin-left: 25px;
+    margin-right: 35px;
+    font-size: 16px;
+    padding-left: 10px;
+    text-align: justify;
+  }
+
+    .objetivo_index img {
+    max-width: 100%;
+    width: 330px;         /* A imagem irá ocupar toda a largura disponível */
+    height: 230px;               /* A altura será ajustada automaticamente para manter a proporção */
+    display: block;          /* Garante que a imagem ocupe uma linha inteira */
+    margin-top: 10px;        /* Adiciona espaçamento acima da imagem */   /* Adiciona espaçamento abaixo da imagem */
+    text-align: center;
+    margin-top: 0;
+    margin-left: 15px;
+    margin-right: 30px;
   }
 
     .metolodolia_index img {
     max-width: 100%;
-    width: 380px;         /* A imagem irá ocupar toda a largura disponível */
-    height: 270px;            /* A altura será ajustada automaticamente para manter a proporção */
+    width: 330px;         /* A imagem irá ocupar toda a largura disponível */
+    height: 230px;               /* A altura será ajustada automaticamente para manter a proporção */
     display: block;          /* Garante que a imagem ocupe uma linha inteira */
     margin-top: 10px;        /* Adiciona espaçamento acima da imagem */
     margin-bottom: -10px;     /* Adiciona espaçamento abaixo da imagem */
@@ -1218,18 +1245,34 @@ label input[type="checkbox"] {
     margin-right: 10px;
   }
 
-  .objetivo_index img {
+  .justificativa_index img {
     max-width: 100%;
-    width: 380px;         /* A imagem irá ocupar toda a largura disponível */
-    height: 270px;            /* A altura será ajustada automaticamente para manter a proporção */
+    width: 330px;         /* A imagem irá ocupar toda a largura disponível */
+    height: 230px;               /* A altura será ajustada automaticamente para manter a proporção */
     display: block;          /* Garante que a imagem ocupe uma linha inteira */
-    margin-top: 10px;        /* Adiciona espaçamento acima da imagem */   /* Adiciona espaçamento abaixo da imagem */
+    margin-top: 10px;        /* Adiciona espaçamento acima da imagem */
+    margin-bottom: -10px;     /* Adiciona espaçamento abaixo da imagem */
     text-align: center;
     margin-top: 0;
-    margin-left: -7px;
     margin-right: 10px;
-    
+    border-radius: 0;
+    margin-left: 35px ;
   }
+  
+  .conclusao_index img {
+    max-width: 100%;
+    width: 330px;         /* A imagem irá ocupar toda a largura disponível */
+    height: 230px;               /* A altura será ajustada automaticamente para manter a proporção */
+    display: block;          /* Garante que a imagem ocupe uma linha inteira */
+    margin-top: 10px;        /* Adiciona espaçamento acima da imagem */
+    margin-bottom: -10px;     /* Adiciona espaçamento abaixo da imagem */
+    text-align: center;
+    margin-top: 0;
+    margin-right: 10px;
+    border-radius: 0;
+    margin-left: 35px ;
+  }
+  
 
   .texto_index_h1, .texto_index_h1 {
     order: -1;               /* Coloca o texto antes da imagem */
@@ -1241,6 +1284,7 @@ label input[type="checkbox"] {
     margin-top: 0;
     padding-top: 10px;
     margin-top: -2  0px;
+    text-align: left;
   }
 
   .texto_index_h2, .texto_index_h2 {
@@ -1249,51 +1293,13 @@ label input[type="checkbox"] {
     padding-right: 10px;
     font-size: 16px;
     font-family: "Lato", sans-serif;
-  }
-
-  .justificativa_index .texto_index, .conclusao_index .texto_index {
-    order: -1;               /* Coloca o texto antes da imagem */
-    max-width: 100%;
-    padding-right: 20px;
-    margin-left: 10px;
-    margin-right: 12px;
-    font-size: 16px;
-    padding-left: 10px;
+    text-align: left;
   }
 
   .legenda_justificativa { 
     font-size: 13px;
     margin-top: -7px;
     padding-bottom: 5px;
-  }
-
-  /* Remove o padding das imagens nas seções de justificativa e conclusão */
-  .justificativa_index img {
-    max-width: 100%;
-    width: 380px;         /* A imagem irá ocupar toda a largura disponível */
-    height: 270px;            /* A altura será ajustada automaticamente para manter a proporção */
-    display: block;          /* Garante que a imagem ocupe uma linha inteira */
-    margin-top: 10px;        /* Adiciona espaçamento acima da imagem */
-    margin-bottom: -10px;     /* Adiciona espaçamento abaixo da imagem */
-    text-align: center;
-    margin-top: 0;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    border-radius: 0;
-  }
-
-  .conclusao_index img {
-    max-width: 100%;
-    width: 380px;         /* A imagem irá ocupar toda a largura disponível */
-    height: 270px;            /* A altura será ajustada automaticamente para manter a proporção */
-    display: block;          /* Garante que a imagem ocupe uma linha inteira */
-    margin-top: 10px;        /* Adiciona espaçamento acima da imagem */
-    margin-bottom: 20px;     /* Adiciona espaçamento abaixo da imagem */
-    text-align: center;
-    margin-top: 0;
-    margin-left: 18px;
-    margin-right: 10px;
-    border-radius: 0;
   }
 
   .text_quemsomosnos_1,
