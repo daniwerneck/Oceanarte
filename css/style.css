@@ -593,6 +593,12 @@ label input[type="checkbox"] {
   height: 100%;
 }
 
+.text_instalaçoes {
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+}
+
 /* Responsividade dos sites */
 
 /* Config geral */
@@ -1285,15 +1291,17 @@ label input[type="checkbox"] {
     padding-top: 10px;
     margin-top: -2  0px;
     text-align: left;
+    line-height: 1.7;
   }
 
-  .texto_index_h2, .texto_index_h2 {
+  .texto_index_h2 {
     order: -1;               /* Coloca o texto antes da imagem */
     max-width: 100%;
     padding-right: 10px;
     font-size: 16px;
     font-family: "Lato", sans-serif;
     text-align: left;
+    line-height: 1.6;
   }
 
   .legenda_justificativa { 
