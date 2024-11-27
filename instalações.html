@@ -7,8 +7,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Fale Conosco</title>
+    <title>Instalações</title>
     <link rel="icon" type="image/png" href="./assets/Logo site.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
     <header>
@@ -28,108 +30,62 @@
       </header>
 
 
-      <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-
-        const firebaseConfig = {
-        apiKey: "AIzaSyD-Gh1a8XUgZhIgkgSSFNV1UWoRS37sojg",
-        authDomain: "oceanarte-789db.firebaseapp.com",
-        projectId: "oceanarte-789db",
-        storageBucket: "oceanarte-789db.firebasestorage.app",
-        messagingSenderId: "773544529553",
-        appId: "1:773544529553:web:1eea02e3e232f07fddb930",
-        measurementId: "G-0K9TD6741R"
-    };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        document.getElementById('userForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-        const nome = document.getElementById('nome').value;
-        const email = document.getElementById('email').value;
-        const idade = document.getElementById('idade').value;
-        const telefone = document.getElementById('telefone').value;
-        const cidade = document.getElementById('cidade').value;
-        const bairro = document.getElementById('bairro').value;
-
-        try {
-            await addDoc(collection(db, "Voluntários"), {
-                nome: nome,
-                email: email,
-                idade: idade,
-                telefone: telefone,
-                cidade: cidade,
-                bairro: bairro,
-            });
-
-            alert("Dados enviados com sucesso!");
-
-            document.getElementById('userForm').reset();
-        } catch (error) {
-            console.error ("Erro ao adicionar documento: ", error);
-            alert ("Ocorreu um erro ao enviar os dados. Tente Novamente.");
-        }
-        });
-
-        document.getElementById("userForm").addEventListener("submit", function (event) {
-        const termsCheckbox = document.getElementById("terms");
-        const ageConsentCheckbox = document.getElementById("ageConsent");
-    
-        if (!termsCheckbox.checked || !ageConsentCheckbox.checked) {
-        event.preventDefault(); // Impede o envio do formulário
-        alert("Você deve marcar todas as opções para continuar.");
-        }
-        });
-
-      </script>
-
         <main class="main-contant">
-        
-            <h1 class="integrantes_quemsomos">Quer fazer parte dessa iniciativa?</h1>
-            <p class="contato_p">Preencha seus dados e junte-se a nós para proteger nossas praias e cuidar do meio ambiente. Sua participação é essencial para fazermos a diferença juntos!</p>
 
-            <div class="formulario">
-                <form id="userForm">
-                    <h1 class="title_contato">Prencha seus dados</h1>
-                    <label>Nome Completo:</label>
-                    <input type="text" id="nome" name="nome" placeholder="Nome" required>
-    
-                    <label>Email:</label>
-                    <input type="email" id="email" name="email" placeholder="E-mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Digite um email válido, como exemplo@dominio.com">
-
-                    <label>Idade:</label>
-                    <input type="number" id="idade" name="idade" placeholder="Idade" required min="16">                    
-    
-                    <label>Telefone:</label>
-                    <input type="text" id="telefone" name="telefone" placeholder="Telefone" required pattern="\(\d{2}\) \d{5}-\d{4}" title="Digite no formato (XX) XXXXX-XXXX">
-
-                    <label>Cidade:</label>
-                    <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
-
-                    <label>Bairro:</label>
-                    <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
+            <h1 class="integrantes_quemsomos">Nossas instalações</h1>
+            <p class="text_instalaçoes"> Descubra agora a localização das nossas instalações! </p>
+            <div class="mapa">
+            <div id="map"></div>
+          
+            <script>
+                // Criar o mapa e definir a posição inicial (Rio de Janeiro) e o nível de zoom
+                var map = L.map('map').setView([-22.9068, -43.1729], 13); // Posição inicial no Rio de Janeiro
+            
+                // Adicionar a camada do OpenStreetMap (é necessário para exibir o mapa)
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+            
+                // Adicionar marcadores para as praias de Copacabana, Ipanema e Flamengo
+                var praias = [
+                    {
+                        nome: "Praia de Copacabana",
+                        lat: -22.9714,
+                        lng: -43.1822,
+                        popup: "Praia de Copacabana"
+                    },
+                    {
+                        nome: "Praia de Ipanema",
+                        lat: -22.987001,
+                        lng: -43.205320,
+                        popup: "Praia de Ipanema"
+                    },
+                    {
+                        nome: "Praia do Flamengo",
+                        lat: -22.930474,
+                        lng: -43.171541,
+                        popup: "Praia do Flamengo"
+                    }
+                ];
+            
+                // Criar um array para armazenar os marcadores
+                var markers = [];
+            
+                // Adicionando os marcadores
+                praias.forEach(function(praia) {
+                    var marker = L.marker([praia.lat, praia.lng]).addTo(map)
+                        .bindPopup("<b>" + praia.popup + "</b>");
                     
-                    <label>
-                    <input type="checkbox" id="terms" name="terms" required>
-                    Concordo com os <a href="#" target="_blank" style="color: #eeac56;">termos de uso</a> e <a href="#" target="_blank" style="color: #eeac56;">política de privacidade</a>.
-                    </label>
-
-                    <label>
-                    <input type="checkbox" id="ageConsent" name="ageConsent" required>
-                    Declaro que sou maior de 16 anos e estou ciente das condições para participar.
-                    </label>
-
-                    <div class="space_button">
-                    <button type="submit" class="button_contato">Enviar</button>
-                    </div>
-                </form>
+                    // Adiciona cada marcador ao array
+                    markers.push(marker);
+                });
+            
+                // Ajustar a visualização do mapa para incluir todos os marcadores
+                var group = new L.featureGroup(markers); // Cria um grupo de marcadores
+                map.fitBounds(group.getBounds()); // Ajusta o mapa para que todos os marcadores fiquem visíveis
+            </script>
+            
             </div>
-
         </main>
 
         <footer class="footer">
@@ -171,7 +127,6 @@
                 <p>&copy; 2024 Oceanarte - Todos os direitos reservados</p>
             </div>
         </footer>
-
         <script>
             let currentIndex = 0; // Define o índice do slide atual
             const slides = document.querySelectorAll('.carousel-item'); // Todos os itens (imagens) do carrossel
