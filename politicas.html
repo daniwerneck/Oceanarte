@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Politicas de Privacidade</title>
+    <link rel="icon" type="image/png" href="./assets/Logo site.png">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="./index.html" class="logo">
+                <img src="./assets/Oceanarte_(1580_x_1080_px).png" alt="Logo">
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Sobre</a>
+                <a href="quem_somos.html">Quem somos</a>
+                <a href="instalações.html">Instalações</a>
+                <a href="parceiros.html">Parceriais</a>
+                <a href="contato.html">Fale Conosco</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-contant">
+        <div class="area_main-contant">
+        <h1 class="title_termos">  Política de Privacidade  da Ocearte</h1>
+        <p class="text_termo"> Bem-vindo ao nosso site! Ao acessar e utilizar nossa plataforma, você concorda com os Termos de Uso e a Política de Privacidade descritos abaixo. 
+            Por favor, leia com atenção para entender seus direitos e responsabilidades ao interagir conosco.  
+        </p>
+        <ol>
+            <li>
+                Coleta de Informações
+                <p> Podemos coletar informações pessoais, como nome, e-mail e localização, fornecidas voluntariamente por você ao preencher formulários, participar de eventos ou interagir com nosso site.    </p>
+            </li>
+
+            <li>
+                Uso das Informações
+                <p>  Utilizamos as informações coletadas para:</p>
+                    <ul>- Entrar em contato sobre eventos e novidades do projeto;</ul>  
+                    <ul>- Melhorar nossos serviços e personalizar sua experiência; </ul> 
+                    <ul>- Cumprir obrigações legais.</ul>      
+            </li>
+
+            <li>
+                Compartilhamento de Dados
+                <p> Não compartilhamos suas informações pessoais com terceiros, exceto: </p>
+                <ul>- Com parceiros envolvidos diretamente no projeto;  </ul>  
+                <ul>- Quando exigido por lei.   </ul> 
+            </li>
+
+            <li>
+                Segurança de Dados
+                <p> Empregamos medidas de segurança para proteger suas informações contra acesso não autorizado. No entanto, não garantimos segurança absoluta, considerando os riscos inerentes à internet. </p>
+            </li>
+
+            <li>
+                Cookies
+                <p>    Utilizamos cookies para melhorar a navegação no site e entender melhor o comportamento dos usuários. Você pode desativá-los nas configurações do navegador, mas algumas funcionalidades podem ser afetadas.  </p>
+            </li>
+
+            <li>
+                Direitos dos Usuários
+                <p> Você tem o direito de acessar, corrigir ou excluir suas informações pessoais. Para isso, entre em contato conosco pelo e-mail fornecido no site.  </p>
+            </li>
+
+            <li>
+                Alterações nos Termos e Políticas
+                <p> Podemos atualizar estes Termos de Uso e Política de Privacidade periodicamente. Recomendamos que você os revise regularmente para se manter informado sobre possíveis alterações.  </p>
+            </li>
+        </ol>
+    </div>
+    </main>
+
+    <footer class="footer">
+        <!-- Título Oceanarte alinhado à esquerda dentro do footer -->
+        <div class="footer-title">
+            <h1>Oceanarte</h1>
+        </div>
+    
+        <div class="footer-content">
+            <div class="footer-section">
+                <ul>
+                    <li><a href="./politicas.html">Política de Doação</a></li>
+                    <li><a href="./index.html">Relatórios Anuais</a></li>
+                    <li><a href="./politicas.html">Política de Comunidade</a></li>
+                    <li><a href="./contato.html">Trabalhe conosco</a></li>
+                    <li><a href="./parceiros.html">Doe agora</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <ul>
+                    <li><a href="./politicas.html">Política de Privacidade</a></li>
+                    <li><a href="./politicas.html">Direitos Autorais</a></li>
+                    <li><a href="./contato.html">Fale conosco</a></li>
+                    <li><a href="./index.html">Arquivo</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section social-media">
+                <p>Siga nossas redes sociais</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/@Oceanarte"><img src="https://img.icons8.com/ios_filled/512/FFFFFF/youtube-play.png" alt="YouTube" class="social-icon"></a></li>
+                    <li><a href="https://www.instagram.com/oceanarte_pplvt/"><img src="https://img.icons8.com/m_outlined/200/FFFFFF/instagram-new.png" alt="Instagram" class="social-icon"></a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024 Oceanarte - Todos os direitos reservados</p>
+        </div>
+    </footer>
+    
+<script>
+    let currentIndex = 0; // Define o índice do slide atual
+    const slides = document.querySelectorAll('.carousel-item'); // Todos os itens (imagens) do carrossel
+    
+    // Função para mudar o slide
+    function changeSlide(direction) {
+        // Remove a classe 'active' de todos os slides
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+    
+        // Atualiza o índice para o slide anterior ou próximo
+        currentIndex += direction;
+    
+        // Se o índice for menor que 0, vai para o último slide
+        if (currentIndex < 0) {
+            currentIndex = slides.length - 1;
+        }
+    
+        // Se o índice for maior que o número de slides, vai para o primeiro
+        if (currentIndex >= slides.length) {
+            currentIndex = 0;
+        }
+    
+        // Adiciona a classe 'active' ao slide atual
+        slides[currentIndex].classList.add('active');
+    }
+    
+    // Função para alternar o menu e ajustar o conteúdo
+    function toggleMenu() {
+        const navLinks = document.getElementById('navLinks');
+        const content = document.querySelector('.main-contant'); // Substitua pelo seletor correto
+    
+        if (!content) {
+            console.warn('Elemento de conteúdo não encontrado. O menu ainda será exibido.');
+        }
+    
+        navLinks.classList.toggle('active');
+    
+        if (navLinks.classList.contains('active') && content) {
+            content.style.marginTop = `${navLinks.offsetHeight}px`;
+        } else if (content) {
+            content.style.marginTop = '0';
+        }
+    }
+    
+    
+    // Inicializa o carrossel mostrando o primeiro slide
+    window.onload = () => {
+        slides[currentIndex].classList.add('active'); // Mostra o primeiro slide ao carregar a página
+    };
+    </script>
