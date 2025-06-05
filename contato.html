@@ -29,7 +29,7 @@
 
 
       <script type="module">
-        // Import the functions you need from the SDKs you need
+
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
         import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
@@ -43,7 +43,6 @@
         measurementId: "G-0K9TD6741R"
     };
       
-        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
@@ -81,7 +80,7 @@
         const ageConsentCheckbox = document.getElementById("ageConsent");
     
         if (!termsCheckbox.checked || !ageConsentCheckbox.checked) {
-        event.preventDefault(); // Impede o envio do formulário
+        event.preventDefault(); 
         alert("Você deve marcar todas as opções para continuar.");
         }
         });
@@ -133,7 +132,6 @@
         </main>
 
         <footer class="footer">
-            <!-- Título Oceanarte alinhado à esquerda dentro do footer -->
             <div class="footer-title">
                 <h1>Oceanarte</h1>
             </div>
@@ -173,37 +171,25 @@
         </footer>
 
         <script>
-            let currentIndex = 0; // Define o índice do slide atual
-            const slides = document.querySelectorAll('.carousel-item'); // Todos os itens (imagens) do carrossel
+            let currentIndex = 0; 
+            const slides = document.querySelectorAll('.carousel-item'); 
             
-            // Função para mudar o slide
             function changeSlide(direction) {
-                // Remove a classe 'active' de todos os slides
                 slides.forEach(slide => {
                     slide.classList.remove('active');
                 });
-            
-                // Atualiza o índice para o slide anterior ou próximo
                 currentIndex += direction;
-            
-                // Se o índice for menor que 0, vai para o último slide
                 if (currentIndex < 0) {
                     currentIndex = slides.length - 1;
                 }
-            
-                // Se o índice for maior que o número de slides, vai para o primeiro
                 if (currentIndex >= slides.length) {
                     currentIndex = 0;
                 }
-            
-                // Adiciona a classe 'active' ao slide atual
                 slides[currentIndex].classList.add('active');
             }
-            
-            // Função para alternar o menu e ajustar o conteúdo
             function toggleMenu() {
                 const navLinks = document.getElementById('navLinks');
-                const content = document.querySelector('.main-contant'); // Substitua pelo seletor correto
+                const content = document.querySelector('.main-contant');
             
                 if (!content) {
                     console.warn('Elemento de conteúdo não encontrado. O menu ainda será exibido.');
@@ -217,13 +203,8 @@
                     content.style.marginTop = '0';
                 }
             }
-            
-            
-            // Inicializa o carrossel mostrando o primeiro slide
             window.onload = () => {
-                slides[currentIndex].classList.add('active'); // Mostra o primeiro slide ao carregar a página
+                slides[currentIndex].classList.add('active');
             };
-            
-            
             </script>
         
